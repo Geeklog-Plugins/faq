@@ -12,6 +12,7 @@ Version 1.2.0:
 - Now plugin supports multiple themes.
 - Fixed undefined variable errors.
 - Removed FAQMAN import.
+- Add Auto install and updated uninstall and upgrade functions.
 
 Version 1.1.0:
 - Updated plugin for GeekLog 1.5.0 API. NOTE: This plugin will not work with 
