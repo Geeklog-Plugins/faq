@@ -1,0 +1,9 @@
+<form action="{site_admin_url}/plugins/faq/index.php" method="get">
+  <input type="hidden" name="mode" value="faq">
+  {faq_lang_category}: 
+  <select name="cat">
+  <option value="">{faq_lang_all}</option>
+  {faq_category_options}
+  </select>
+  <input type="submit" name="action" value="{faq_lang_show}">
+</form>

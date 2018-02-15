@@ -1,0 +1,2 @@
+    <input type="text" size="11" name="faq_hits" value="{faq_hits}">
+    

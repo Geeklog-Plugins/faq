@@ -1,0 +1,12 @@
+<h2><img src="{site_url}/faq/images/faq.png" style="padding-right:5px; border:none; float:left;" alt="{faq_title}">
+{faq_title}</h2>
+<dl><dd>
+{faq_desc}
+</dd></dl>
+<hr>
+<table style="border: none;">
+<tr><td align="right"><b>{faq_lang_hits}:</b></td><td>{faq_hits}</td></tr>
+<tr><td align="right"><b>{faq_lang_updated}:</b></td><td>{faq_updated}</td></tr>
+</table>
+<hr>
+[ <a href="{faq_cats_url}">{faq_lang_cats}</a> | <a href="{faq_cat_url}">{faq_cat_title}</a>{faq_edit} ]

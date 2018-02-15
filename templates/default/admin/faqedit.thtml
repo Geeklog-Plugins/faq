@@ -1,0 +1,90 @@
+<form action="{site_admin_url}/plugins/faq/index.php" method="post">
+<input type="hidden" name="mode" value="faq">
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+
+<tr>
+  <td align="right">{faq_lang_id}:</td>
+  <td>
+    <input type="text" size="40" maxlength="40" name="faq_id" value="{faq_id}">
+  </td>
+</tr>
+<tr>
+  <td align="right">{faq_lang_title}:</td>
+  <td>
+    <input type="text" size="69" maxlength="250" name="faq_title" value="{faq_title}">
+  </td>
+</tr>
+<tr>
+  <td align="right" valign="top">{faq_lang_desc}:</td>
+  <td>
+    <textarea name="faq_desc" cols="50" rows="8">{faq_desc}</textarea>
+    <br>{lang_allowed_html}
+  </td>
+</tr>
+<tr>
+  <td align="right">{faq_lang_category}:</td>
+  <td>
+    <select name="faq_category">
+    {faq_category_options}
+    </select>
+  </td>
+</tr>
+<tr>
+  <td align="right">{faq_lang_hits}:</td>
+  <td>
+    {faq_hits_edit}
+  </td>
+</tr>
+<tr>
+  <td align="right" valign="top">{faq_lang_date}:</td>
+  <td>
+    {faq_date}<br>{faq_date_edit}
+  </td>
+</tr>
+<tr>
+  <td colspan="2"><hr><td>
+</tr>
+<tr>
+  <td colspan="2"><b>{lang_accessrights}</b></td>
+</tr>
+<tr>
+  <td align="right">{lang_owner}:</td>
+  <td>{owner_username}<input type="hidden" name="owner_id" value="{faq_ownerid}"></td>
+</tr>
+<tr>
+  <td align="right">{lang_group}:</td>
+  <td>
+    {group_dropdown}
+  </td>
+<tr>
+<tr>
+  <td colspan="2"><b>{lang_permissions}</b>:</td>
+</tr>
+<!--tr>
+  <td colspan="2"></td>
+</tr-->
+<tr>
+  <td colspan="2">{lang_permissionskey}</td>
+</tr>
+<tr>
+  <td colspan="2">
+  {permissions_editor}
+  </td>
+</tr>
+<tr>
+  <td colspan="2">{lang_lockmsg}<td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+  <td colspan="2">
+    <input type="submit" value="{lang_save}" name="action"> 
+    <input type="submit" value="{lang_cancel}" name="action">
+    {delete_option}
+    <input type="hidden" value="{faq_id}" name="faq_old_id">
+  </td>
+</tr>
+</table>
+</form>
+<script language="JavaScript1.2" defer>
+editor_generate('description');
+</script>

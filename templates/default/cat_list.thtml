@@ -1,0 +1,4 @@
+<h2>{faq_cat_header}</h2>
+<dl>
+{faq_cat_list_item}
+</dl>

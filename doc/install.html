@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>FAQ Plugin</title>
+</head>
+<body>
+<h1>FAQ Plugin</h1>
+Check the README for information on license and support information.
+<h2>Installation instructions</h2>
+<ul>
+<li><a href="#install">New Installation</a>
+    <ul>
+    <li><a href="#pre_install">Pre-Installation Checklist</a></li>
+    <li><a href="#instr_install">Installation Instructions</a></li>
+    </ul></li>
+<li><a href="#upgrade">Upgrading to New Version</a>
+    <ul>
+    <li><a href="#pre_upgrade">Pre-Upgrade Checklist</a></li>
+    <li><a href="#instr_upgrade">Upgrade Instructions</a></li>
+    </ul></li>
+<li><a href="#problems">Common Problems</a>
+    <ul>
+    <li><a href="#install_problem">Installation</a></li>
+    <li><a href="#postinstall_problem">Post-Installation</a></li>
+    </ul></li>
+</ul>
+<hr>
+<a name="install">
+<a name="pre_install">
+<h3>Pre-Installation Checklist (new installation)</h3>
+Before installing the FAQ plugin for the first time, please make sure you have or know the following:
+<ol type="1">
+<li>A working GeekLog installation</li>
+<li>A telnet or SSH connection to your web server (although FTP will work). This document will be written assuming you have command line access to your server, but we will note the major differences for FTP users.</li>
+<li>The ability to unpack a tarball (file ending in tar.gz).</li>
+<li>You know the difference between a path and a URL.</li>
+<li>You know how to determine your system paths.</li>
+<li>You understand the reference to <i>public_html</i> as described in the GeekLog Pre-Installation checklist.</li>
+</ol>
+<a name="instr_install">
+<h3>Installation Instructions (new installation)</h3>
+Please read this section <b>COMPLETELY</b> before beginning.
+<ol type="1">
+<li>Unpack the tarball *within* your geeklog plugin directory by running the following in your shell (this assumes you have ssh access and that you are working with the tarball <i>on the designated server</i> - this can be locally or hosted elsewhere):
+<pre>cd /path/to/geeklog/plugins
+tar -zxvf /path/to/tarball/faq_1.1.0_1.5.0.tar.gz</pre>
+<b>FTP, Windows Users:</b> unpack the tarball on your <i>local computer</i> and upload the result to your designated server. Everything uploads as ASCII except the images.
+<p>The result of this step should be a new folder named <i>faq</i> located at /path/to/geeklog/plugins/faq.</li>
+<li>For *nix installations the following may be required:
+<pre>chown -R webuser:webuser /path/to/geeklog/plugins/faq</pre>
+This guarantees that everything in that path belongs to you, typical settings are www:www or nobody:nobody and more often than not doesn't matter.</li>
+<li>Move the plugin public_html directory to the geeklog directory, renaming it to <i>faq</i> by running the following in your shell:
+<pre>cd /path/to/geeklog
+mv plugins/faq/public_html public_html/faq</pre>
+</li>
+<li>Move the plugin admin directory to the geeklog admin/plugins directory, renaming it to <i>faq</i> by running the following in your shell:
+<pre>cd /path/to/geeklog
+mv plugins/faq/admin public_html/admin/plugins/faq</pre>
+</li>
+<li>Open the /path/to/geeklog/plugins/faq/config.php file and potentially change any of the default settings.</li>
+<li>Go to the plugin administration panel on your geeklog site:
+<pre>http:/your_geeklog_url/admin/plugins.php</pre>
+You should see the <i>faq</i> plugin listed at the bottom under <i>New Plugin</i>. Hit the <i>Install</i> link and the plugin will install.</li>
+</ol>
+<hr>
+<a name="upgrade">
+<a name="pre_upgrade">
+<h3>Pre-Upgrade Checklist (upgrade)</h3>
+Before upgrading the FAQ plugin, please make sure you have or know the following:
+<ol type="1">
+<li>You are able to make a new plugin installation - see the <a href="#pre_install">Pre-Installation Checklist</a></li>
+<li>You have a newly made complete back up of your current Geeklog installation. This includes all files and a back up of the database.</li>
+</ol>
+<a name="instr_upgrade">
+<h3>Upgrade Instructions (upgrade)</h3>
+Upgrading is no different than a fresh installation except you need to run a upgrade command.
+<ol type="1">
+<li>Back up any old FAQ plugin files with custom code. This is typically the plugin config.php (/path/to/geeklog/plugins/faq/config.php) and any change plugin templates.</li>
+<li>Back up the database.</li>
+<li>You can choose to either rename or remove your current plugin directories. Although in the end you will be deleting the older install it's probably safer to keep the old copy around for a few days *just* in-case you forgot to transfer some files. The directories you should rename/remove are:
+<pre>/path/to/geeklog/plugins/faq
+/path/to/geeklog/public_html/faq
+/path/to/geeklog/public_html/admin/plugins/faq</pre></li>
+<li>From the <a href="#instr_install">Installation Instructions</a>, perform step 1 through 4 (uncompressing and copying files). <b>DO NOT</b> perform any other steps than step 1, 2, 3 and 4.</li>
+<li>Open the /path/to/geeklog/plugins/faq/config.php file and copy any changes from the old (backed up) file into the new.</li>
+<li>Go to the plugin administration panel on your geeklog site:
+<pre>http:/your_geeklog_url/admin/plugins.php</pre>
+Your FAQ plugin should be listed as needing an upgrade. Klick the edit icon for the FAQ plugin. On the FAQ plugin editor screen now showing, click the upgrade button and wait for the plugin to complete the upgrade.</li>
+</ol>
+<hr>
+<a name="problems">
+<a name="install_problem">
+<h3>Installation Problems (common)</h3>
+<a name="postinstall_problem">
+<h3>Post-Install Problems (common)</h3>
+<dl>
+<dt>I have installed the plugin but do not understand how it works.</dt>
+<dd>When the plugin is installed it creates a simple FAQ about it self. Please consult this FAQ for more information about the plugin.</dd>
+</dl>
+If you have a problem not listed here, please do one or more of the following:
+<ol type="1">
+<li>Go to <a href="https://www.geeklog.net">https://www.geeklog.net</a> and <a href="https://www.geeklog.net/search.php">search there</a>. If the search does not help you, try asking a question in the <a href="https://www.geeklog.net/forum">forum</a> there.</li>
+<li>Go to <a href="https://github.com/Geeklog-Plugins/faq">Github FAQ Repository</a> and see if you can find any additional information about your problem (try searching for the error message, if you get one).</li>
+<li>Try entering the text of the error message on Google. Chances are you will find someone else who had the same problem and fixed it. And sometimes searching for a specific error will cause Google to bring up broken pages that have the same error.</li>
+</ol>
+</body>
+</html>
