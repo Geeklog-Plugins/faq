@@ -66,8 +66,4 @@ $_FAQ_CONF['default_permissions'] = array (3, 3, 2, 2);
 $_FAQ_CONF['cat_sort_order'] = 'hits DESC'; // Sort order of categories.
 $_FAQ_CONF['faq_sort_order'] = 'hits DESC'; // Sort order of FAQs within a category.
 
-// database table names - don't change
-$_TABLES['faq']               = $_DB_table_prefix . 'faq';
-$_TABLES['faq_category']      = $_DB_table_prefix . 'faq_category';
-
 ?>

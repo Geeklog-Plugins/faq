@@ -51,6 +51,10 @@ require_once ($_CONF['path'] . 'plugins/faq/config.php');
 require_once ($_CONF['path'] . 'plugins/faq/api.inc');
 require_once ($_CONF['path'] . 'plugins/faq/util.inc');
 
+// database table names - don't change
+$_TABLES['faq']               = $_DB_table_prefix . 'faq';
+$_TABLES['faq_category']      = $_DB_table_prefix . 'faq_category';
+
 function phpblock_faq_random()
 {
     global $_TABLES, $_CONF, $LANG_FAQ_COMMON;

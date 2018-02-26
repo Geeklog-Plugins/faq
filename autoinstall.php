@@ -84,12 +84,13 @@ function plugin_autoinstall_faq($pi_name)
 function plugin_load_configuration_faq($pi_name)
 {
     global $_CONF;
-    
+
     $base_path = $_CONF['path'] . 'plugins/' . $pi_name . '/';
 
-    require_once ($base_path . 'config.php');
-    
-    return true;
+    require_once $_CONF['path_system'] . 'classes/config.class.php';
+    require_once $base_path . 'install_defaults.php';
+
+    return plugin_initconfig_faq();
 }
 
 function plugin_postinstall_faq($pi_name)
