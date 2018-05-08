@@ -48,7 +48,6 @@ $cat_id = COM_applyFilter(UTIL_getParamStr('cat', ''));
 $pagetitle = '';
 if ( ! empty($faq_id)) {
     $pagetitle = $LANG_FAQ_COMMON['FAQ'] . ' Entry';
-    //$display .= COM_siteHeader ('menu', $LANG_FAQ_COMMON['FAQ'] . ' Entry');
     
     $e = DB_query("SELECT faq.id AS id, faq.title AS title, faq.description AS description, cat.id AS cat_id, cat.title AS cat
                      FROM {$_TABLES['faq']} AS faq, 
@@ -74,6 +73,9 @@ if ( ! empty($faq_id)) {
     
     $tpl = COM_newTemplate(CTL_plugin_templatePath('faq'));
     $tpl->set_file( array('faq' => 'faq.thtml'));
+    
+    $tpl->set_var('block_start', COM_startBlock($pagetitle));
+    
 	$tpl->set_var( 'faq_lang_cats' , $LANG_FAQ_COMMON['Categories'] );
 	$tpl->set_var( 'site_url', $_CONF['site_url']  );
 	$tpl->set_var( 'faq_cats_url', $_CONF['site_url'] . '/faq/index.php' );
@@ -90,6 +92,8 @@ if ( ! empty($faq_id)) {
 	if (1 == DB_numRows($e) && SEC_hasRights ('faq.edit'))
 	    $tpl->set_var( 'faq_edit', ' | <a href="' . $_CONF['site_admin_url'] . '/plugins/faq/index.php?mode=faq&amp;action=edit&amp;id=' . $faq_id . '">' . $LANG_FAQ_ADMIN['Edit'] . '</a>' );
 	    
+    $tpl->set_var('block_end', COM_endBlock());    
+        
 	$tpl->parse('output', 'faq');
     $display .= $tpl->finish($tpl->get_var('output'));
     
@@ -123,9 +127,9 @@ if ( ! empty($faq_id)) {
         $menu_arr[] = array('url'=>$_CONF['site_admin_url'] . '/plugins/faq/index.php?mode=cat&amp;action=edit&amp;id=' . $cat_id, 'text'=>$LANG_FAQ_ADMIN['Edit']);
 
     $text_arr = array('has_menu' =>  true,
-                      'title' => $A['title'], 
+    //                  'title' => $A['title'], 
                       'instructions' => PLG_replaceTags($A['description']),
-                      'icon' => $_CONF['site_url'] . '/faq/images/cat.png');
+                      'icon' => $_CONF['site_url'] . '/faq/images/category-questions.png');
 
     $data_arr = array();
 
@@ -145,16 +149,22 @@ if ( ! empty($faq_id)) {
         $data_arr[] = $A;
     }
 
+    $display .= COM_startBlock($pagetitle, '',  COM_getBlockTemplate('_admin_block', 'header'));    
     $display .= ADMIN_createMenu($menu_arr, $text_arr['instructions'], $text_arr['icon']);
     $display .= ADMIN_simpleList ("faq_getListField_faq", $header_arr, $text_arr, $data_arr);
+    $display .= COM_endBlock(COM_getBlockTemplate('_admin_block', 'footer'));    
 }
 else {
     $pagetitle = $LANG_FAQ_COMMON['FAQ'];
     
     $tpl = COM_newTemplate(CTL_plugin_templatePath('faq'));
-    $tpl->set_file( array('list' => 'cat_list.thtml',
-						  'row' => 'cat_list_item.thtml'));
+    $tpl->set_file( array('list' => 'cat_list.thtml'));
+    $tpl->set_block('list', 'cat_list_item');
+
+                          
+    $tpl->set_var('block_start', COM_startBlock($LANG_FAQ_COMMON['FAQ_cat_header']));
 	$tpl->set_var( 'faq_cat_header' , $LANG_FAQ_COMMON['FAQ_cat_header'] );
+    
 	$tpl->set_var( 'site_url', $_CONF['site_url'] );
     
     $r = DB_query("SELECT cat.id AS id, cat.title AS title, cat.description AS description, 
@@ -174,8 +184,10 @@ else {
         $tpl->set_var('faq_cat_faqs', $A['cnt']);
         $tpl->set_var('faq_cat_hits', $A['hits']);
         
-        $tpl->parse('faq_cat_list_item', 'row', true);
+        $tpl->parse('faq_cat_list_item', 'cat_list_item', true);
     }
+    
+    $tpl->set_var('block_end', COM_endBlock());
     
     $tpl->parse('output', 'list');
     $display .= $tpl->finish($tpl->get_var('output'));

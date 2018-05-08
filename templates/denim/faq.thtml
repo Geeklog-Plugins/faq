@@ -1,3 +1,5 @@
+{# begin {templatelocation} #}
+
 {block_start}
 
 <h2><img src="{site_url}/faq/images/faq-entry.png" style="padding-right:5px; border:none; float:left;" alt="{faq_title}">
@@ -14,3 +16,5 @@
 [ <a href="{faq_cats_url}">{faq_lang_cats}</a> | <a href="{faq_cat_url}">{faq_cat_title}</a>{faq_edit} ]
 
 {block_end}
+
+{# end {templatelocation} #}
