@@ -395,8 +395,8 @@ function plugin_dopluginsearch_faq($query, $datestart, $dateend, $topic, $type, 
     $search_f = new SearchCriteria('faq', $LANG_FAQ_SEARCH['FAQ']);
 
     $columns = array('title' => 'title', 'description');
-    $sql_d .= $search_f->getDateRangeSQL('AND', 'date', $datestart, $dateend);
-    list($sql_tmp,$ftsql_tmp) = $search_f->buildSearchSQL($keyType, $query, $columns, $sql_f . $sql . $sql_d);
+    $sql_d = $search_f->getDateRangeSQL('AND', 'date', $datestart, $dateend);
+    list($sql_tmp, $ftsql_tmp) = $search_f->buildSearchSQL($keyType, $query, $columns, $sql_f . $sql . $sql_d);
 
     $search_f->setSQL($sql_tmp);
     $search_f->setFTSQL($ftsql_tmp);
