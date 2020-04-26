@@ -6,6 +6,9 @@ For upgrade instructions; open the doc/install.html file.
 CHANGES
 -------
 
+Version 1.2.0.1:
+- Fixed an undefined variable error that could cause a sql error.
+
 Version 1.2.0:
 - Updated plugin for GeekLog 2.2.0 API. NOTE: This plugin will work with 
   GeekLog v2.1.3 and higher.
