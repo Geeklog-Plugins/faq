@@ -1,10 +1,36 @@
-FAQ Plugin README
+# Geeklog FAQ Plugin
 
-For installation instructions; open the doc/install.html file.
-For upgrade instructions; open the doc/install.html file.
+* Maintainers: [Geeklog Community Members](https://github.com/Geeklog-Plugins/faq/graphs/contributors)
+* Latest Release Supports: Geeklog v2.1.3 or higher
 
-CHANGES
--------
+## Summary
+
+The Geeklog FAQ plugin allows webmasters to create a list of FAQ categories which contain FAQ entries. Categories can have descriptions and Entries have a question asked and an answer given.
+
+## Main Features
+
+- Ids of FAQ Categories and Entries can be a unique text string (good for SEO)
+- Entries include a hit counter
+- Entries support HTML and autotags
+- Makes use of Geeklog permissions for Categories and Entries
+
+## Other Information
+
+For installation instructions; open the doc/install.html file. For upgrade instructions; open the doc/install.html file.
+
+Geeklog Homepage:
+https://www.geeklog.net
+
+FAQ Plugin Homepage:
+https://github.com/Geeklog-Plugins/faq
+
+To find the latest releases see:
+https://github.com/Geeklog-Plugins/faq/releases
+
+To request a feature or report an issue see: 
+https://github.com/Geeklog-Plugins/faq/issues
+
+## Versions
 
 Version 1.2.0.1:
 - Fixed an undefined variable error that could cause a sql error.
@@ -43,18 +69,3 @@ Version 1.0.1:
   - GeekLog security limiting FAQ access.
   - Search functionality.
   - Ability to import FAQ topics from the faqman plugin.
-
-LICENSE
--------
-This plugin is licensed under the GPL - same as GeekLog.
-
-SUPPORT
--------
-When installing the plugin it will create a small FAQ about it self.
-Other options support options are:
-- Visit http://plugincms.com for support regarding this plugin.
-- Use the GeekLog Forum at http://www.geeklog.net if that doesn't help you.
-- As a last resort you may contact the author(s) of this plugin. Check
-  the source files for contact information.
-
-Emil Gustafsson (emil AT cellfish DOT se)
