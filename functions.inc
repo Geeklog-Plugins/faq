@@ -33,6 +33,8 @@
 //
 // $Id$
 
+global $_DB_table_prefix;
+
 if (strpos ($_SERVER['PHP_SELF'], 'functions.inc') !== false) {
     die ('This file can not be used on its own.');
 }
