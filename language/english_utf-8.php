@@ -122,5 +122,3 @@ $LANG_FAQ_IMPORT = array(
     'unknown' => 'Unknown import action: ',
     'imported' => '%d FAQs in %d Categories imported'
 );
-
-?>

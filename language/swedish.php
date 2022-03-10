@@ -122,5 +122,3 @@ $LANG_FAQ_IMPORT = array(
     'unknown' => 'Okänd import metod: ',
     'imported' => '%d FAQs i %d Kategorier importerade'
 );
-
-?>
