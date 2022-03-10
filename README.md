@@ -32,6 +32,9 @@ https://github.com/Geeklog-Plugins/faq/issues
 
 ## Versions
 
+Version 1.2.0.2:
+- Added missing entries for the language files.
+
 Version 1.2.0.1:
 - Fixed an undefined variable error that could cause a sql error.
 

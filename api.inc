@@ -597,6 +597,11 @@ function plugin_upgrade_faq()
                 $current_version = '1.2.0.1';
                 break;
 
+            case '1.2.0.1':
+                // no db changes
+                $current_version = '1.2.0.2';
+                break;
+
             default:
                 $done = true;
                 break;
