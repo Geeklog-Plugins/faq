@@ -55,6 +55,7 @@ $LANG_FAQ_STATS = array(
 * for the search
 ******************************************************************************/
 $LANG_FAQ_SEARCH = array(
+ 'FAQ' => 'FAQ',
  'results' => 'FAQ Resultat',
  'title' => 'Fråga',
  'date' => 'Uppdaterad',
