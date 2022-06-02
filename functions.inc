@@ -108,7 +108,11 @@ function faq_getListField_common($mode, $fieldname, $fieldvalue, $A, $icon_arr)
             $retval = "<a href=\"{$_CONF['site_url']}/faq/index.php?{$mode}={$A['id']}\">$fieldvalue</a>";
             break;
         case 'unixdate':
-                $retval = strftime ($_CONF['daytime'], $A['unixdate']);
+				if (is_callable('COM_strftime')) {
+					$retval = COM_strftime($_CONF['daytime'], $A['unixdate']);
+				} else {
+					$retval = strftime($_CONF['daytime'], $A['unixdate']);
+				}		
                 break;
         case 'hits':
             $retval = COM_numberFormat ($A['hits']);
