@@ -39,7 +39,7 @@ function plugin_autoinstall_faq($pi_name)
     $info = array(
         'pi_name'         => $pi_name,
         'pi_display_name' => $pi_display_name,
-        'pi_version'      => '1.2.0.2',
+        'pi_version'      => '1.2.0.3',
         'pi_gl_version'   => '2.1.3',
         'pi_homepage'     => 'https://github.com/Geeklog-Plugins/faq'
     );

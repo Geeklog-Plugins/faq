@@ -32,6 +32,9 @@ https://github.com/Geeklog-Plugins/faq/issues
 
 ## Versions
 
+Version 1.2.0.3:
+- Fix for PHP 8.1.
+
 Version 1.2.0.2:
 - Added missing entries for the language files.
 - Added the Persian language file provided by Mahdi Montazeri
